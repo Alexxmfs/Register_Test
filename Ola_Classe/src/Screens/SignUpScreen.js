@@ -8,13 +8,13 @@ import LottieView from 'lottie-react-native';
 const INSTAGRAM_LOGO =
 'https://marcas-logos.net/wp-content/uploads/2020/01/instagram_icon_logo.png';
 
-const SignupScreen = (props) => (
+const SignupScreen = ({navigation}) => (
 <View style={styles.container}>
     <ScrollView>
     <View style={styles.circleButton}>
         <CircleButton 
          imgUrl = {assets.next}
-         onPress={() => props.navigation.navigate("RegistryScreen")}
+         onPress={() => navigation.navigate("RegistryScreen")}
         />
      </View>
         <View>
@@ -33,7 +33,7 @@ const SignupScreen = (props) => (
             style={{width: 350, height: 350, marginTop: -45}}
             />
         </View>
-        <SignupForm props={props}/>
+        <SignupForm navigation={navigation}/>
         </ScrollView>
     </View>
 )

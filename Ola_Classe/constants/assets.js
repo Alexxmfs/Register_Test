@@ -17,5 +17,3 @@ animationSignUp,
 logo,
 
 };
-
-

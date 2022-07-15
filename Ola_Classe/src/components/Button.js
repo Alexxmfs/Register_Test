@@ -1,4 +1,4 @@
-import { TouchableOpacity, View, Text, Image, StyleSheet } from "react-native";
+import { TouchableOpacity, View, Text, Image } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS, SIZES, SHADOWS, FONTS, assets, DarkBlue } from "../../constants";
 
@@ -16,7 +16,7 @@ export const CircleButton =({ imgUrl, onPress }) => {
             <Image
             source={imgUrl}
             resizeMode="contain"
-            style={{ width: 55, height: 55}}
+            style={{ width: 50, height: 50}}
             />
 
         </TouchableOpacity>
@@ -102,4 +102,3 @@ export const ButtonWhite = ({ onPress }) => {
     </View>
   );  
 } 
-
