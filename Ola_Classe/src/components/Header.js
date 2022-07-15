@@ -1,0 +1,73 @@
+import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import firebase from '../../firebase';
+import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../constants';
+
+const handleSignout = async () => {
+    try {
+        await firebase.auth().signOut()
+        console.log('Signed out succesfully!')
+    } catch (error) {
+        console.log(error)
+        }
+    }
+    const Header = ({navigation}) => {
+      return (
+        <View style={styles.container}>
+            <TouchableOpacity onPress={handleSignout}>
+            <Image 
+                style={styles.OlaClasse}
+                source={require(assets.logo)} 
+              />
+              </TouchableOpacity>
+              </View>
+    )
+}
+  
+              
+const styles = StyleSheet.create({
+    container: {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginHorizontal: 20,
+        marginBottom: 25
+    },
+
+    iconsContainer: {
+        top: 30,
+        flexDirection: 'row'
+    },
+    OlaClasse: {
+        top: 30,
+        width: 100,
+        height: 50,
+        resizeMode: 'contain',
+    },
+    icon: {
+        width: 30,
+        height: 30,
+        marginLeft: 10,
+        resizeMode: 'contain'
+    },
+    
+    unreadBadge: {
+        backgroundColor: '#FF3250',
+        position: 'absolute',
+        left: 20,
+        bottom: 18,
+        width: 25,
+        height: 18,
+        borderRadius: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 100,
+    },
+    
+    unreadBadgeText: {
+        color: 'white', 
+        fontWeight: '600',
+    }
+})
+
+export default Header
