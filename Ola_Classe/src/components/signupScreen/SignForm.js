@@ -120,7 +120,7 @@ const SignupForm = ({navigation}) => {
   >
   <TextInput
   placeholderTextColor="#444"
-  placeholder="Password"
+  placeholder="Senha"
   autoCapitalize='none'
   secureTextEntry={true}
   textContentType='password'
@@ -136,11 +136,10 @@ const SignupForm = ({navigation}) => {
       >
       <Text style={styles.buttonText}>Criar Conta</Text>
   </Pressable>
-
+  <Text style={{top: 20, marginRight: 160}}>Já tem uma conta? </Text>
   <View style={styles.loginContainer}>
-      <Text>Already have an account? </Text>
       <TouchableOpacity onPress={() => navigation.push('LoginScreen')}>
-          <Text style={{ color: '#6BB0F5' }}>Log In</Text>
+          <Text style={{ color: '#6BB0F5', top: -50, marginRight: 45 }}>Conecte-se</Text>
       </TouchableOpacity>
   </View>
   </>

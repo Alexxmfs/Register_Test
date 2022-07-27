@@ -34,7 +34,7 @@ const RegistryScreen = ({navigation}) => {
     
     <View style={{marginTop: 60, top: 52, marginRight: 10}}>
     <ButtonBlue 
-    onPress={() => navigation.navigate("SignUpScreen")}
+    onPress={() => navigation.navigate("StudentOrTeacher")}
     />
 </View>
 

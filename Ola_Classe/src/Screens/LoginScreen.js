@@ -1,17 +1,18 @@
 import React from 'react'
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import LoginForm from '../components/loginScreen/LoginForm';
 import { CircleButton } from '../components/Button';
 import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../constants';
 
-const INSTAGRAM_LOGO =
-'https://marcas-logos.net/wp-content/uploads/2020/01/instagram_icon_logo.png';
 
 const LoginScreen = ({navigation}) => (
     <View style={styles.container}>
-        <View style={styles.logoContainer}>
-            <Image source={{uri: INSTAGRAM_LOGO, height: 100, width: 100}} />
-        </View>
+        <View style={styles.circleButton}>
+        <CircleButton 
+         imgUrl = {assets.next}
+         onPress={() => navigation.navigate("RegistryScreen")}
+        />
+     </View>
         <LoginForm navigation={navigation}/>
     </View>
 )
@@ -22,10 +23,17 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingTop: 50,
         paddingHorizontal: 12,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     logoContainer: {
         alignItems: 'center',
         marginTop: 60,
+    },
+    circleButton: {
+        top: -180,
+        right: 150,
+        transform: [{ rotate: "180deg"}]
     }
 })
 

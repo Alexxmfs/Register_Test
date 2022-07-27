@@ -11,6 +11,9 @@ import SignUpScreen from "./src/Screens/SignUpScreen";
 import LoginScreen from "./src/Screens/LoginScreen";
 import HomeScreen from './src/Screens/HomeScreen';
 
+import StudentOrTeacher from './src/Screens/StudentOrTeacher';
+import TeacherLang from './src/Screens/languagesScreens/TeacherLang'
+
 const Stack = createStackNavigator();
 
 const theme = {
@@ -60,13 +63,15 @@ export const SignedOutStack = () => {
   <NavigationContainer>
     <Stack.Navigator
     screenOptions={{ headerShown: false }}
-    initialRouteName='FirstIntroduction'>
+    initialRouteName='TeacherLang'>
         <Stack.Screen name="FirstIntroduction" component={FirstIntroduction} />
         <Stack.Screen name="SecondIntroduction" component={SecondIntroduction} />
         <Stack.Screen name="ThirdIntroduction" component={ThirdIntroduction} />
         <Stack.Screen name="RegistryScreen" component={RegistryScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+        <Stack.Screen name="StudentOrTeacher" component={StudentOrTeacher} />
+        <Stack.Screen name="TeacherLang" component={TeacherLang} />
     </Stack.Navigator>
   </NavigationContainer>
   );

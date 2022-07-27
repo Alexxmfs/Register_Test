@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup'
 import  Validator  from 'email-validator';
+import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../../constants'
 
 
 const LoginForm = ({navigation}) => {
@@ -49,6 +50,15 @@ const LoginForm = ({navigation}) => {
             {({ handleChange, handleBlur, handleSubmit, values, isValid }) => 
             (
         <>
+        <View style={styles.textCenter}>
+        <Text style={{fontSize: SIZES.extraLarge + 5, fontFamily: FONTS.bold}}>Olá Novamente!</Text>
+        <View>
+            <Text style={{fontSize: SIZES.extraLarge + 5}}>Bem vindo de volta, você</Text>
+        </View>
+        <View>
+            <Text style={{fontSize: SIZES.extraLarge + 5}}>fez falta!</Text>
+        </View>
+        </View>
         <View 
         style={[
             styles.inputField,
@@ -95,22 +105,19 @@ const LoginForm = ({navigation}) => {
         value={values.password}
         />
         </View>
-        <View style={{alignItems: 'flex-end', marginBottom: 30}}>
-            <Text style={{ color: '#6BB0F5' }}>Forgot password?</Text>
-        </View>
         <Pressable 
             titleSize={20}
             style={styles.button(isValid)}
             onPress={handleSubmit}
             disabled={!isValid}
             >
-            <Text style={styles.buttonText}>Log In</Text>
+            <Text style={styles.buttonText}>Entrar</Text>
         </Pressable>
 
         <View style={styles.signupContainer}>
-            <Text>Don't have an account? </Text>
+            <Text style={{marginTop: 30, marginLeft: 10}}>Não tem uma conta? </Text>
             <TouchableOpacity onPress={() => navigation.push('SignUpScreen')}>
-                <Text style={{ color: '#6BB0F5' }}>Sign Up</Text>
+                <Text style={{ color: '#6BB0F5', marginLeft: 148, marginTop: -20}}>Cadastre-se</Text>
             </TouchableOpacity>
         </View>
         </>
@@ -122,38 +129,48 @@ const LoginForm = ({navigation}) => {
 
 const styles = StyleSheet.create({
     wrapper: {
-        marginTop: 80,
     },
     inputField: {
-    borderRadius: 4,
+    top: -65,
+    borderRadius: 8,
     padding: 8,
     height: 50,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#DCE8FF',
     marginBottom: 10,
     borderWidth: 1,
     justifyContent: 'center',
+    borderColor: '#ACD3FC',
     },
-
+    
     button: (isValid) => ({
-        backgroundColor: isValid ? '#0096F6': '#9ACAF7',
+      backgroundColor: isValid ? '#0A58EE': '#9ACAF7',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 8,
+      width: 370,
+      height: 55,
+      marginTop: -45,
+      padding: SIZES.small,
+    }),
+    
+    buttonText: {
+      fontWeight: '600',
+      color: '#FFF',
+      fontSize: 22,
+    },
+    
+    loginContainer: {
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'center',
+      marginTop: 50,
+    },
+    textCenter: {
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: 42,
-        borderRadius: 4,
-    }),
-
-    buttonText: {
-        fontWeight: '600',
-        color: '#FFF',
-        fontSize: 20,
-    },
-
-    signupContainer: {
-        flexDirection: 'row',
-        width: '100%',
-        justifyContent: 'center',
-        marginTop: 50,
+        top: -120,
     }
-})
+    })
+    
 
 export default LoginForm
